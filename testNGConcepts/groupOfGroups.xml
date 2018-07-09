@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="group of groups" parallel='none'>
+	<test name="testOne" preserve-order="true">
+		<groups>
+			<define name="multiGroup">
+			    <include name="groupOne"/>
+			    <include name="groupTwo"/>
+			</define>
+			
+			<run>
+			    <include name="multiGroup"/>
+			</run>
+		</groups>
+		<classes>
+			<class name="testngFramework.testNGConcepts.Groups" />
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="depends on groups" parallel='none'>
+	<test name="test" preserve-order="true">
+	    <!--groupTwo test cases execution depends on groupOne -->
+		<groups>
+			<dependencies>
+				<group depends-on="groupOne" name="groupTwo">
+				</group>
+			</dependencies>
+		</groups>
+		<classes>
+			<class name="testngFramework.testNGConcepts.Dependent" />
+		</classes>
+	</test>
+</suite>
